@@ -8,7 +8,7 @@ This repository contains modified code of the lightweight and ground optimized l
 Modified code
 
 1. utility.h
-
+```
 extern const string pointCloudTopic = "/kitti/velo/pointcloud"; <- you should check your own bag file topic
 
 //param for vel-64
@@ -18,15 +18,15 @@ extern const float ang_res_x = 0.2;
 extern const float ang_res_y = 0.427;
 extern const float ang_bottom = 24.9;
 extern const int groundScanInd = 50;
-
+```
 2. featureAssociation.cpp
-
+```
 float s 10 * (pi->intensity - int(pi->intensity)); -> float s = 1;
 
 // to delete all the code that corrects point cloud distortion
 TransformToEnd(&cornerPointsLessSharp->points[i], &cornerPointsLessSharp->points[i]); -> removed
 TransformToEnd(&surfPointsLessFlat->points[i], &surfPointsLessFlat->points[i]); -> removed
-
+```
 Reference : https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/issues/12
 
 Notes: The parameter "loopClosureEnableFlag" is set to "true" for SLAM. 
