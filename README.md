@@ -4,11 +4,8 @@ This repository contains modified code of the lightweight and ground optimized l
 <!--
 [![Watch the video](/LeGO-LOAM/launch/demo.gif)](https://www.youtube.com/watch?v=O3tz_ftHV48)
 -->
-<p align='center'>
-    <img src="/LeGO-LOAM/launch/demo.gif" alt="drawing" width="800"/>
-</p>
 
-where modified
+Modified code
 
 1. utility.h
 
