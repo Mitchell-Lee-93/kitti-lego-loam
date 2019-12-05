@@ -26,10 +26,10 @@ float s 10 * (pi->intensity - int(pi->intensity)); -> float s = 1;
 // to delete all the code that corrects point cloud distortion
 TransformToEnd(&cornerPointsLessSharp->points[i], &cornerPointsLessSharp->points[i]); -> removed
 TransformToEnd(&surfPointsLessFlat->points[i], &surfPointsLessFlat->points[i]); -> removed
+
+*Notes: The parameter "loopClosureEnableFlag" is set to "true" for SLAM. 
 ```
 Reference : https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/issues/12
-
-Notes: The parameter "loopClosureEnableFlag" is set to "true" for SLAM. 
 
 ## Dependency
 
