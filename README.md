@@ -1,6 +1,6 @@
-# LeGO-LOAM,A-LOAM for kitti dataset
+# LeGO-LOAM for kitti dataset
 
-This repository contains modified code of LeGO-LOAM and A-LOAM to run and evaluate with kitti-data set. If you run the code, you'll get the trajectory results in KITTI groundtruth format and directly evalutate with EVO-eval kit. 
+This repository contains modified code of LeGO-LOAM to run and evaluate with kitti-data set. If you run the code, you'll get the trajectory results in KITTI groundtruth format and directly evalutate with EVO-eval kit. 
 
 Modified code
 
@@ -54,6 +54,8 @@ rosdep install --from-paths src --ignore-src -r -y
 catkin_make
 ```
 
+## Making new bagfile from kitti dataset 
+
 
 ## Run the package
 
@@ -63,12 +65,8 @@ roslaunch lego_loam run.launch
 ```
 Notes: The parameter "/use_sim_time" is set to "true" for simulation, "false" to real robot usage.
 
-2. converting Velodyne packet data to point cloud data
-```
-rosrun nodelet nodelet standalone velodyne_pointcloud/CloudNodelet
-```
 
-3. Play existing bag files:
+2. Play existing bag files:
 ```
 rosbag play *.bag --clock 
 ```
