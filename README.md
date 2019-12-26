@@ -1,6 +1,6 @@
 # LeGO-LOAM for kitti dataset
 
-This repository contains modified code of LeGO-LOAM to run and evaluate with kitti-data set. If you run the code, you'll get the trajectory results in KITTI groundtruth format and directly evalutate with EVO-eval kit. 
+This repository contains modified code of LeGO-LOAM to run and evaluate with kitti-data set. If you run the code, you'll get the trajectory results of LeGO-LOAM in KITTI groundtruth format and you can directly evalutate the result with EVO-eval kit. 
 
 Modified code
 
