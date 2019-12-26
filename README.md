@@ -26,6 +26,12 @@ TransformToEnd(&surfPointsLessFlat->points[i], &surfPointsLessFlat->points[i]); 
 
 *Notes: The parameter "loopClosureEnableFlag" is set to "true" for SLAM. 
 ```
+3. transformfusion.cpp
+``
+From line 222 to 286, saving results code added
+
+```
+
 Reference : https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/issues/12
 
 ## Dependency
