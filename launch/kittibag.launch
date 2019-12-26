@@ -1,0 +1,10 @@
+<launch>
+    
+    <node name="kittiHelper" pkg="aloam_velodyne" type="kittiHelper" output="screen"> 
+        <param name="dataset_folder" type="string" value="/media/hglee/New_vol/data/KITTI/dataset/" />
+        <param name="sequence_number" type="string" value="10" />
+        <param name="to_bag" type="bool" value="true" />
+        <param name="output_bag_file" type="string" value="/media/hglee/New_vol/data/KITTI/dataset/10.bag" /> <!-- replace with your output folder -->
+        <param name="publish_delay" type="int" value="1" />
+    </node>
+</launch>
