@@ -1,9 +1,6 @@
-# LeGO-LOAM for kitti
+# LeGO-LOAM,A-LOAM for kitti dataset
 
-This repository contains modified code of the lightweight and ground optimized lidar odometry and mapping (LeGO-LOAM) system to run with kitti-data set. The system takes in point cloud from a Velodyne VLP-64 Lidar (palced horizontal). It outputs 6D pose estimation in real-time. A demonstration of the system can be found here -> https://www.youtube.com/watch?v=O3tz_ftHV48
-<!--
-[![Watch the video](/LeGO-LOAM/launch/demo.gif)](https://www.youtube.com/watch?v=O3tz_ftHV48)
--->
+This repository contains modified code of LeGO-LOAM and A-LOAM to run and evaluate with kitti-data set. If you run the code, you'll get the trajectory results in KITTI groundtruth format and directly evalutate with EVO-eval kit. 
 
 Modified code
 
