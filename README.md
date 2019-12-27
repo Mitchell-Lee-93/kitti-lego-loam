@@ -52,8 +52,8 @@ Reference : https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/issues/12
 1. Before compile, you should change the directory of the result files
 ```
 gedit ~/catkin_ws/src/LeGO-LOAM/LeGO-LOAM/include/utility.h
-change line 56 'RESULT_PATH' to your result dir
 ```
+change line 56 'RESULT_PATH' to your result dir
 
 2. You can use the following commands to download and compile the package.
 
@@ -69,10 +69,12 @@ catkin_make
 Download odometry dataset(color or gray, velodyne, calibration, ground truth)
 from : http://www.cvlibs.net/datasets/kitti/eval_odometry.php and Merge them all in one dataset directory
 
-1. In the launch file, change 'dataset_folder' and 'output_bag_file' to your own directories
+1. Edit the launch file
 ```
 gedit ~/catkin_ws/src/kittibag/launch/kittibag.launch
 ```
+Change 'dataset_folder' and 'output_bag_file' to your own directories
+
 2. Run the launch file:
 ```
 roslaunch kittibag kittibag.launch
