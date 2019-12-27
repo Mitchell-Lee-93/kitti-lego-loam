@@ -1,6 +1,6 @@
 # LeGO-LOAM for kitti dataset
 
-This repository contains modified code of LeGO-LOAM to run and evaluate with kitti-data set. If you run the code, you'll get the trajectory results of LeGO-LOAM in KITTI groundtruth format and you can directly evalutate the result with EVO-eval kit. 
+This repository contains modified code of LeGO-LOAM to run and evaluate with kitti-data set. When you run the code, you'll get the trajectory results of LeGO-LOAM in KITTI groundtruth format and you can directly evalutate the result with EVO-eval kit. Wish you find it helpful, specialy who are not familiar with these.
 
 Modified code
 
@@ -47,11 +47,10 @@ Reference : https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/issues/12
   sudo make install
   ```
 
-## Changing diretory
+## Changing a directory
 ```
 gedit ~/catkin_ws/src/LeGO-LOAM/LeGO-LOAM/include/utility.h
 change line 56 'RESULT_PATH' to your result dir
-
 ```
 
 ## Compile
@@ -67,7 +66,16 @@ catkin_make
 ```
 
 ## Making new bagfile from kitti dataset 
+1. Download odometry dataset(color or gray, velodyne, calibration, ground truth)
+from : http://www.cvlibs.net/datasets/kitti/eval_odometry.php 
 
+2. Merge them all in one dataset directory
+
+3. gedit ~/catkin_ws/src/kittibag/launch/kittibag.launch
+
+4. Change 'dataset_folder' and 'output_bag_file' to your own directories
+
+5. roslaunch kittibag kittibag.launch
 
 ## Run the package
 
