@@ -1,6 +1,6 @@
 # LeGO-LOAM for kitti dataset
 
-This repository contains modified code of LeGO-LOAM to run and evaluate with kitti-data set. If you run the code, you'll get the trajectory results in KITTI groundtruth format and directly evalutate with EVO-eval kit. 
+This repository contains modified code of LeGO-LOAM to run and evaluate with kitti-data set. When you run the code, you'll get the trajectory results of LeGO-LOAM in KITTI groundtruth format and you can directly evalutate the result with EVO-eval kit. Wish you find it helpful, specialy who are not familiar with these.
 
 Modified code
 
@@ -26,6 +26,11 @@ TransformToEnd(&surfPointsLessFlat->points[i], &surfPointsLessFlat->points[i]); 
 
 *Notes: The parameter "loopClosureEnableFlag" is set to "true" for SLAM. 
 ```
+3. transformfusion.cpp
+```
+From line 222 to 286, saving results code added
+```
+
 Reference : https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/issues/12
 
 ## Dependency
@@ -44,7 +49,13 @@ Reference : https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/issues/12
 
 ## Compile
 
-You can use the following commands to download and compile the package.
+1. Before compile, you should change the directory of the result files
+```
+gedit ~/catkin_ws/src/LeGO-LOAM/LeGO-LOAM/include/utility.h
+```
+change line 56 'RESULT_PATH' to your result dir
+
+2. You can use the following commands to download and compile the package.
 
 ```
 cd ~/catkin_ws/src
@@ -55,8 +66,19 @@ catkin_make
 ```
 
 ## Making new bagfile from kitti dataset 
+Download odometry dataset(color or gray, velodyne, calibration, ground truth)
+from : http://www.cvlibs.net/datasets/kitti/eval_odometry.php and Merge them all in one dataset directory
 
+1. Edit the launch file
+```
+gedit ~/catkin_ws/src/kittibag/launch/kittibag.launch
+```
+Change 'dataset_folder' and 'output_bag_file' to your own directories
 
+2. Run the launch file:
+```
+roslaunch kittibag kittibag.launch
+```
 ## Run the package
 
 1. Run the launch file:
@@ -65,11 +87,18 @@ roslaunch lego_loam run.launch
 ```
 Notes: The parameter "/use_sim_time" is set to "true" for simulation, "false" to real robot usage.
 
-
 2. Play existing bag files:
 ```
 rosbag play *.bag --clock 
 ```
+
+## Evaluation with evo kit
+Check and follow this repository
+```
+https://github.com/MichaelGrupp/evo
+```
+## Evaluation results
+
 
 ## Original code from
 https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/blob/master/README.md
