@@ -87,11 +87,18 @@ roslaunch lego_loam run.launch
 ```
 Notes: The parameter "/use_sim_time" is set to "true" for simulation, "false" to real robot usage.
 
-
 2. Play existing bag files:
 ```
 rosbag play *.bag --clock 
 ```
+
+## Evaluation with evo kit
+Check and follow this repository
+```
+https://github.com/MichaelGrupp/evo
+```
+## Evaluation results
+
 
 ## Original code from
 https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/blob/master/README.md
