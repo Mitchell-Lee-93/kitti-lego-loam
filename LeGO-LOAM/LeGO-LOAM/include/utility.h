@@ -53,7 +53,6 @@ typedef pcl::PointXYZI  PointType;
 
 extern const string pointCloudTopic = "/kitti/velo/pointcloud";
 extern const string imuTopic = "/imu/data";
-extern const string RESULT_PATH = "/home/hglee/catkin_ws/src/kitti-lego-loam/devkit/gt_mine/poses/lego_10.txt";
 
 
 // Save pcd

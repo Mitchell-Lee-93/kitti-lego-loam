@@ -32,6 +32,8 @@
 
 #include "utility.h"
 
+std::string RESULT_PATH;
+
 class TransformFusion{
 
 private:
@@ -319,6 +321,9 @@ public:
 int main(int argc, char** argv)
 {
     ros::init(argc, argv, "lego_loam");
+    ros::NodeHandle nh;
+
+    nh.getParam("RESULT_PATH", RESULT_PATH);
 
     TransformFusion TFusion;
 

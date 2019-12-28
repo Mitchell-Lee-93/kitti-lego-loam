@@ -1,5 +1,8 @@
 <launch>
-    
+ 
+    <!--- Result dir -->  
+    <param name="RESULT_PATH" type="string" value="/home/hglee/catkin_ws/src/re_00.txt" />
+
     <!--- Sim Time -->
     <param name="/use_sim_time" value="true" />
 
