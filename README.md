@@ -53,13 +53,7 @@ Reference : https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/issues/12
 
 ## Compile
 
-1. Before compile, you should change the directory of the result files
-```
-gedit ~/catkin_ws/src/LeGO-LOAM/LeGO-LOAM/include/utility.h
-```
-change line 56 'RESULT_PATH' to your result dir
-
-2. You can use the following commands to download and compile the package.
+1. You can use the following commands to download and compile the package.
 
 ```
 cd ~/catkin_ws/src
@@ -84,14 +78,19 @@ Change 'dataset_folder' and 'output_bag_file' to your own directories
 roslaunch kittibag kittibag.launch
 ```
 ## Run the package
+1. Before run, you should change the directory of the result files
+```
+gedit ~/catkin_ws/src/LeGO-LOAM/LeGO-LOAM/launch/run.launch
+```
+change 'RESULT_PATH' to your result dir
 
-1. Run the launch file:
+2. Run the launch file:
 ```
 roslaunch lego_loam run.launch
 ```
 Notes: The parameter "/use_sim_time" is set to "true" for simulation, "false" to real robot usage.
 
-2. Play existing bag files:
+3. Play existing bag files:
 ```
 rosbag play *.bag --clock 
 ```
