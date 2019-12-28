@@ -5,6 +5,8 @@ This repository contains modified code of LeGO-LOAM to run and evaluate with kit
 Modified code
 
 1. utility.h
+
+for Velodyne 64 channel
 ```
 extern const string pointCloudTopic = "/kitti/velo/pointcloud"; <- you should check your own bag file topic
 
@@ -17,6 +19,7 @@ extern const float ang_bottom = 24.9;
 extern const int groundScanInd = 50;
 ```
 2. featureAssociation.cpp
+Since kitti data already have removed the distortion
 ```
 float s 10 * (pi->intensity - int(pi->intensity)); -> float s = 1;
 
@@ -27,6 +30,7 @@ TransformToEnd(&surfPointsLessFlat->points[i], &surfPointsLessFlat->points[i]); 
 *Notes: The parameter "loopClosureEnableFlag" is set to "true" for SLAM. 
 ```
 3. transformfusion.cpp
+To correct two diffrent TF of lego-loam results and kitti gt. And also to save the results in kitti gt format
 ```
 From line 222 to 286, saving results code added
 ```
@@ -103,5 +107,5 @@ https://github.com/MichaelGrupp/evo
 
 
 ## Original code from
-https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/blob/master/README.md
+https://github.com/RobustFieldAutonomyLab/LeGO-LOAM
 
