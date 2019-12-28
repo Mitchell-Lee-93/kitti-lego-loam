@@ -105,6 +105,8 @@ https://github.com/MichaelGrupp/evo
 
 <img src = "https://raw.githubusercontent.com/Mitchell-Lee-93/kitti-lego-loam/master/kittibag/pic/1.png" width = "300"> <img src = "https://raw.githubusercontent.com/Mitchell-Lee-93/kitti-lego-loam/master/kittibag/pic/2.png" width = "300">  <img src = "https://raw.githubusercontent.com/Mitchell-Lee-93/kitti-lego-loam/master/kittibag/pic/3.png" width = "200">
 
+## For A-LOAM with kitti 
+check https://github.com/Mitchell-Lee-93/kitti-A-LOAM
 
 ## Original code from
 https://github.com/RobustFieldAutonomyLab/LeGO-LOAM
