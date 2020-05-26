@@ -1,6 +1,6 @@
 <launch>
     
-    <node name="kittiHelper" pkg="aloam_velodyne" type="kittiHelper" output="screen"> 
+    <node name="kittibag" pkg="kittibag" type="kittibag" output="screen"> 
         <param name="dataset_folder" type="string" value="/media/hglee/New_vol/data/KITTI/dataset/" />
         <param name="sequence_number" type="string" value="10" />
         <param name="to_bag" type="bool" value="true" />
