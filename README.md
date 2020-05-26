@@ -2,43 +2,6 @@
 
 This repository contains modified code of LeGO-LOAM to run and evaluate with kitti-data set. When you run the code, you'll get the trajectory results of LeGO-LOAM in KITTI groundtruth format and you can directly evalutate the result with KITTI ground-truth by EVO-eval kit. Wish you find it helpful, especially who are not familiar with ROS and LOAM.
 
-Modified code
-
-1. utility.h
-
-for Velodyne 64 channel
-```
-extern const string pointCloudTopic = "/kitti/velo/pointcloud"; <- you should check your own bag file topic
-
-//param for vel-64
-extern const int N_SCAN = 64;
-extern const int Horizon_SCAN = 1800;
-extern const float ang_res_x = 0.2;
-extern const float ang_res_y = 0.427;
-extern const float ang_bottom = 24.9;
-extern const int groundScanInd = 50;
-```
-2. featureAssociation.cpp
-
-Since kitti data already have removed the distortion
-```
-float s 10 * (pi->intensity - int(pi->intensity)); -> float s = 1;
-
-// to delete all the code that corrects point cloud distortion
-TransformToEnd(&cornerPointsLessSharp->points[i], &cornerPointsLessSharp->points[i]); -> removed
-TransformToEnd(&surfPointsLessFlat->points[i], &surfPointsLessFlat->points[i]); -> removed
-
-*Notes: The parameter "loopClosureEnableFlag" is set to "true" for SLAM. 
-```
-3. transformfusion.cpp
-
-To correct two diffrent TF of lego-loam results and kitti gt. And also to save the results in kitti gt format
-```
-From line 222 to 286, saving results code added
-```
-
-Reference : https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/issues/12
-
 ## Dependency
 
 - [ROS](http://wiki.ros.org/ROS/Installation) (tested with indigo and kinetic)
@@ -111,4 +74,41 @@ check https://github.com/Mitchell-Lee-93/kitti-A-LOAM
 
 ## Original code from
 https://github.com/RobustFieldAutonomyLab/LeGO-LOAM
+
+Modified code
+
+1. utility.h
+
+for Velodyne 64 channel
+```
+extern const string pointCloudTopic = "/kitti/velo/pointcloud"; <- you should check your own bag file topic
+
+//param for vel-64
+extern const int N_SCAN = 64;
+extern const int Horizon_SCAN = 1800;
+extern const float ang_res_x = 0.2;
+extern const float ang_res_y = 0.427;
+extern const float ang_bottom = 24.9;
+extern const int groundScanInd = 50;
+```
+2. featureAssociation.cpp
+
+Since kitti data already have removed the distortion
+```
+float s 10 * (pi->intensity - int(pi->intensity)); -> float s = 1;
+
+// to delete all the code that corrects point cloud distortion
+TransformToEnd(&cornerPointsLessSharp->points[i], &cornerPointsLessSharp->points[i]); -> removed
+TransformToEnd(&surfPointsLessFlat->points[i], &surfPointsLessFlat->points[i]); -> removed
+
+*Notes: The parameter "loopClosureEnableFlag" is set to "true" for SLAM. 
+```
+3. transformfusion.cpp
+
+To correct two diffrent TF of lego-loam results and kitti gt. And also to save the results in kitti gt format
+```
+From line 222 to 286, saving results code added
+```
+
+Reference : https://github.com/RobustFieldAutonomyLab/LeGO-LOAM/issues/12
 
